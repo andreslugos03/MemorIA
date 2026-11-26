@@ -1,0 +1,10 @@
+sistema,id_doc,inicio,fin,tipo,texto
+oro,DOC-001#0,20,39,HECHO,12 de marzo de 1991
+oro,DOC-001#0,145,155,LUGAR,La Playita
+oro,DOC-001#0,159,172,LUGAR,Puerto Arenal
+oro,DOC-001#0,299,315,PERSONA,Rosa Elvira Peña
+oro,DOC-004#0,66,89,ESTRUCTURA,Frente Cordillera Norte
+oro,DOC-004#0,132,142,LUGAR,El Mirador
+oro,DOC-004#0,146,163,LUGAR,San Telmo del Río
+oro,DOC-004#0,200,221,PERSONA,Hernando Quiroga Vela
+oro,DOC-004#0,229,236,ALIAS,el Mono

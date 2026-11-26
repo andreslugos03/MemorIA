@@ -1,0 +1,46 @@
+{
+  "sistemas": [
+    {
+      "nombre": "ollama-local",
+      "proveedor": "openai_compatible",
+      "modelo": "llama3.1:8b",
+      "version_modelo": "llama3.1:8b-instruct-q4_K_M",
+      "base_url": "http://localhost:11434/v1",
+      "local": true,
+      "pesos_abiertos": true,
+      "temperatura": 0,
+      "semilla": 42,
+      "max_tokens": 800
+    },
+    {
+      "nombre": "lmstudio-local",
+      "proveedor": "openai_compatible",
+      "modelo": "qwen2.5-7b-instruct",
+      "base_url": "http://127.0.0.1:1234/v1",
+      "local": true,
+      "pesos_abiertos": true,
+      "temperatura": 0,
+      "semilla": 42
+    },
+    {
+      "nombre": "openai-externo",
+      "proveedor": "openai_compatible",
+      "modelo": "NOMBRE_DEL_MODELO",
+      "base_url": "https://api.openai.com/v1",
+      "api_key_env": "OPENAI_API_KEY",
+      "local": false,
+      "pesos_abiertos": false,
+      "temperatura": 0,
+      "semilla": 42
+    },
+    {
+      "nombre": "anthropic-externo",
+      "proveedor": "anthropic",
+      "modelo": "NOMBRE_DEL_MODELO",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "local": false,
+      "pesos_abiertos": false,
+      "temperatura": 0
+    }
+  ]
+}

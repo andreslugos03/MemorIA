@@ -1,0 +1,24 @@
+{
+  "sistemas": [
+    {
+      "nombre": "simulado-local",
+      "proveedor": "simulado",
+      "version_modelo": "simulado-0.4",
+      "local": true,
+      "pesos_abiertos": true,
+      "temperatura": 0,
+      "semilla": 42,
+      "municipios_conocidos": ["Villa Ceiba", "Altos de Corozo", "Puerto Arenal"]
+    },
+    {
+      "nombre": "simulado-externo",
+      "proveedor": "simulado",
+      "version_modelo": "simulado-0.4",
+      "local": false,
+      "pesos_abiertos": false,
+      "temperatura": 0,
+      "semilla": 42,
+      "municipios_conocidos": ["Villa Ceiba", "Altos de Corozo"]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Si usas este software, cítalo con estos metadatos."
+title: "MemorIA. Auditoría situada de modelos de lenguaje y asistente de consulta para archivos testimoniales del conflicto armado"
+type: software
+version: 0.4.0
+date-released: 2026-11-26
+license: AGPL-3.0-or-later
+repository-code: "https://github.com/andreslugos03/MemorIA"
+authors:
+  - family-names: "Correa Lugos"
+    given-names: "Andrés David"
+    orcid: "https://orcid.org/0000-0002-6477-8001"
+    affiliation: "Universidad Industrial de Santander, Doctorado en Ciencias Sociales y Humanas, grupo PSORHE"
+keywords:
+  - humanidades digitales
+  - memoria histórica
+  - conflicto armado colombiano
+  - auditoría algorítmica
+  - modelos de lenguaje
+  - epistemicidio algorítmico

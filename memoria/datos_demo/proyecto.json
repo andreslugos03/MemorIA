@@ -1,0 +1,10 @@
+{
+  "nombre": "Demostración MemorIA con datos ficticios",
+  "descripcion": "Corpus, municipios, personas y hechos inventados para probar el protocolo. Ningún dato describe hechos reales.",
+  "corpus": "corpus/documentos.jsonl",
+  "lexico": "corpus/lexico.csv",
+  "tamano_fragmento": 120,
+  "solapamiento": 30,
+  "top_k": 3,
+  "repeticiones_2a": 5
+}
