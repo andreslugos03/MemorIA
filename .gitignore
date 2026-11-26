@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Proyectos de trabajo y salidas locales: nunca se versionan datos de auditorías reales
+memoria_demo/
+mi_demo/
+proyectos/
+**/registros/
+**/codificacion/
+**/datos_metricas/
+**/resultados/
+**/correcciones/
+!memoria/datos_demo/
+
+# Claves y entornos
+.env
+*.key
+
+# Sistema
+.DS_Store
+.streamlit/secrets.toml
