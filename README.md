@@ -20,7 +20,7 @@ Partimos de una pregunta. Cada vez más personas leen el pasado a través de cha
 
 ## Instalación
 
-Requiere Python 3.10 o superior. El núcleo funciona solo con la biblioteca estándar, y la interfaz web usa Streamlit.
+El núcleo requiere Python 3.10 o superior y funciona solo con la biblioteca estándar. La interfaz web usa Streamlit y requiere Python 3.11 o superior.
 
 ```bash
 pip install "memoria-ia[app] @ git+https://github.com/andreslugos03/MemorIA"
@@ -52,6 +52,18 @@ Lo que muestra la demostración, con datos ficticios.
 * El sistema externo no filtra porque la compuerta nunca le entrega lo restringido. Sigue fuera de la interfaz pública por incumplimientos léxicos, territoriales, de abstención y de lenguaje revictimizante.
 
 Esa es la lección de diseño que ya encontramos en la corrida de demostración de octubre de 2026. El recurso que mejora la fidelidad, el acceso al archivo, es el mismo que pone en riesgo el cuidado. Por eso el asistente público de MemorIA recupera solo fuentes públicas, incluso cuando el modelo corre en un computador local.
+
+## Interfaz
+
+La interfaz web sigue el lenguaje visual de macOS e iOS. Tiene una barra lateral translúcida con íconos en teselas de color, títulos grandes, tarjetas, listas agrupadas, controles segmentados, colores del sistema y tipografía San Francisco en los equipos que la tienen. Cambia sola entre modo claro y modo oscuro según la preferencia del sistema operativo. No incluye fuentes, logotipos ni recursos de Apple, y en otros sistemas usa Helvetica Neue, Segoe UI o Roboto.
+
+![Inicio del proyecto en modo claro](docs/capturas/inicio-claro.png)
+
+| Asistente | Dictamen en modo oscuro |
+|---|---|
+| ![Asistente con los documentos en primer plano](docs/capturas/asistente-claro.png) | ![Perfil de indicadores en modo oscuro](docs/capturas/dictamen-oscuro.png) |
+
+`memoria app` aplica el tema de forma automática. Para abrir la app directamente con Streamlit desde la raíz del repositorio basta `streamlit run memoria/app/app.py`, porque `.streamlit/config.toml` apunta al mismo tema.
 
 ## Recorrido de una auditoría real
 
@@ -119,7 +131,7 @@ La batería reproduce el ejemplo publicado por Krippendorff (2011) para el alfa 
 
 ## Cómo citar
 
-Correa Lugos, A. D. (2026). *MemorIA. Auditoría situada de modelos de lenguaje y asistente de consulta para archivos testimoniales del conflicto armado* (versión 0.4.0) [Software]. Universidad Industrial de Santander. https://github.com/andreslugos03/MemorIA
+Correa Lugos, A. D. (2026). *MemorIA. Auditoría situada de modelos de lenguaje y asistente de consulta para archivos testimoniales del conflicto armado* (versión 0.5.0) [Software]. Universidad Industrial de Santander. https://github.com/andreslugos03/MemorIA
 
 El archivo [CITATION.cff](CITATION.cff) permite citarlo desde GitHub.
 

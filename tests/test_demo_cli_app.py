@@ -94,6 +94,16 @@ except ImportError:  # pragma: no cover
     AppTest = None
 
 
+def tipos_de_elementos(nodo, acumulado=None):
+    """Tipos de todos los elementos renderizados, para detectar salidas «mágicas» de Streamlit."""
+    acumulado = [] if acumulado is None else acumulado
+    hijos = getattr(nodo, "children", None) or {}
+    for hijo in (hijos.values() if isinstance(hijos, dict) else hijos):
+        acumulado.append(str(getattr(hijo, "type", type(hijo).__name__)))
+        tipos_de_elementos(hijo, acumulado)
+    return acumulado
+
+
 @unittest.skipIf(AppTest is None, "streamlit no está instalado")
 class PruebaApp(ConCarpeta):
     def test_todas_las_paginas_se_renderizan(self):
@@ -108,9 +118,32 @@ class PruebaApp(ConCarpeta):
                            "Auditoría · codificar", "Auditoría · conciliar", "Dictamen"):
                 at.sidebar.radio[0].set_value(pagina).run()
                 self.assertFalse(at.exception, f"{pagina}: {list(at.exception)}")
+                tipos = tipos_de_elementos(at._tree)
+                self.assertNotIn("json", tipos, f"{pagina}: Streamlit imprimió una expresión suelta")
+                self.assertFalse([t for t in tipos if "help" in t or "doc" in t], pagina)
             at.sidebar.radio[0].set_value("Asistente").run()
             at.text_input(key="consulta").set_value("¿Qué ocurrió en Puerto Arenal en 1991?").run()
             self.assertFalse(at.exception)
             self.assertIn("Documentos", [s.value for s in at.subheader])
         finally:
             os.environ.pop("MEMORIA_PROYECTO", None)
+
+    def test_tema_y_estilo(self):
+        from memoria.app import estilo
+        ruta = os.path.join(os.path.dirname(cli.__file__), "app", "tema_apple.toml")
+        self.assertTrue(os.path.exists(ruta))
+        for tema in ("light", "dark"):
+            css = estilo.css(tema)
+            self.assertEqual(css.count("{"), css.count("}"), f"llaves desbalanceadas en el estilo {tema}")
+            self.assertNotIn("}}", css)
+            for i in range(1, len(estilo.NAVEGACION) + 1):
+                self.assertIn(f"> div:nth-child({i}) label::before", css)
+        self.assertIn("&lt;b&gt;", estilo.pastilla("<b>"))
+        try:
+            import tomllib
+        except ImportError:  # Python 3.10
+            return
+        with open(ruta, "rb") as f:
+            tema = tomllib.load(f)["theme"]
+        self.assertEqual(tema["light"]["primaryColor"], "#007AFF")
+        self.assertEqual(tema["dark"]["primaryColor"], "#0A84FF")

@@ -1,0 +1,7 @@
+# Aplica el tema de MemorIA cuando la app se abre desde la raíz del repositorio:
+#   streamlit run memoria/app/app.py
+[theme]
+base = "memoria/app/tema_apple.toml"
+
+[browser]
+gatherUsageStats = false

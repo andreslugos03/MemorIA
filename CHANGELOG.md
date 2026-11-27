@@ -1,5 +1,14 @@
 # Bitácora de versiones
 
+## 0.5.0 · 2026-11-27
+
+* Interfaz web rediseñada con el lenguaje visual de macOS e iOS. Barra lateral translúcida con secciones e íconos en teselas de color, títulos grandes, tarjetas, listas agrupadas, control segmentado, interruptores, píldoras de estado, campo de búsqueda amplio, tablas sin líneas verticales y anillo de progreso del recorrido de auditoría.
+* Tema empaquetado (`memoria/app/tema_apple.toml`) con colores del sistema en variantes clara y oscura, que sigue la preferencia del sistema operativo. `memoria app` lo aplica y `.streamlit/config.toml` lo aplica al abrir la app desde la raíz del repositorio.
+* Íconos propios trazados en SVG. La interfaz no usa fuentes, logotipos ni recursos de Apple.
+* Corrección. Dos expresiones sueltas del código hacían que Streamlit imprimiera la lista de documentos y la descripción del índice en todas las páginas. Una prueba nueva detecta cualquier salida de ese tipo.
+* Pruebas de integridad del estilo (llaves balanceadas, un ícono por sección) y del tema.
+* La interfaz web requiere ahora Python 3.11 o superior, por la versión de Streamlit que trae los temas claro y oscuro. El núcleo sigue funcionando desde Python 3.10.
+
 ## 0.4.0 · 2026-11-26
 
 Primera versión pública en GitHub, reconstruida desde el protocolo v1.0 y el kit de cálculo `audit_metrics.py` v1.0.

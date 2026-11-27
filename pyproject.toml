@@ -22,7 +22,9 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
-app = ["streamlit>=1.50"]
+# La interfaz web usa los temas claro y oscuro de Streamlit 1.67, que exige Python 3.11.
+# En Python 3.10 el núcleo funciona completo y la interfaz web no se instala.
+app = ["streamlit>=1.67; python_version >= '3.11'"]
 
 [project.urls]
 Repositorio = "https://github.com/andreslugos03/MemorIA"
@@ -38,4 +40,4 @@ version = { attr = "memoria.__version__" }
 include = ["memoria*"]
 
 [tool.setuptools.package-data]
-memoria = ["datos_demo/*.json", "datos_demo/*/*.csv", "datos_demo/*/*.jsonl", "app/*.py"]
+memoria = ["datos_demo/*.json", "datos_demo/*/*.csv", "datos_demo/*/*.jsonl", "app/*.py", "app/*.toml"]

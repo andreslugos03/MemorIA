@@ -184,13 +184,16 @@ def cmd_app(a):
     try:
         import streamlit  # noqa: F401
     except ImportError:
-        sys.exit("La interfaz web requiere streamlit. Instálala con: "
+        sys.exit("La interfaz web requiere Python 3.11 o superior y streamlit. Instálala con: "
                  "pip install \"memoria-ia[app] @ git+https://github.com/andreslugos03/MemorIA\"")
     app = os.path.join(os.path.dirname(__file__), "app", "app.py")
     env = {**os.environ}
     if a.proyecto:
         env["MEMORIA_PROYECTO"] = os.path.abspath(a.proyecto)
-    sys.exit(subprocess.call([sys.executable, "-m", "streamlit", "run", app, "--server.port", str(a.puerto)], env=env))
+    tema = os.path.join(os.path.dirname(__file__), "app", "tema_apple.toml")
+    orden = [sys.executable, "-m", "streamlit", "run", app, "--server.port", str(a.puerto), "--theme.base", tema,
+             "--browser.gatherUsageStats", "false"]
+    sys.exit(subprocess.call(orden, env=env))
 
 
 def construir_parser() -> argparse.ArgumentParser:
