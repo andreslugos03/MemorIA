@@ -22,7 +22,7 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
-app = ["streamlit>=1.50"]
+app = ["streamlit>=1.67"]
 
 [project.urls]
 Repositorio = "https://github.com/andreslugos03/MemorIA"
@@ -38,4 +38,4 @@ version = { attr = "memoria.__version__" }
 include = ["memoria*"]
 
 [tool.setuptools.package-data]
-memoria = ["datos_demo/*.json", "datos_demo/*/*.csv", "datos_demo/*/*.jsonl", "app/*.py"]
+memoria = ["datos_demo/*.json", "datos_demo/*/*.csv", "datos_demo/*/*.jsonl", "app/*.py", "app/*.toml"]

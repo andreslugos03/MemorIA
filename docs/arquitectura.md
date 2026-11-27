@@ -45,7 +45,7 @@ flowchart LR
 | `memoria/metricas.py` | Veintiún indicadores, fiabilidad, efecto correctivo, dictamen y reporte |
 | `memoria/asistente/` | Asistente de consulta y registro de correcciones comunitarias |
 | `memoria/demo.py` | Proyecto ficticio y codificadores simulados de la demostración |
-| `memoria/app/` | Interfaz web en Streamlit |
+| `memoria/app/` | Interfaz web en Streamlit, con su tema (`tema_apple.toml`) y su hoja de estilo (`estilo.py`) |
 | `memoria/cli.py` | Orden `memoria` |
 
 El núcleo usa solo la biblioteca estándar de Python. Esa decisión facilita la instalación en equipos institucionales y la revisión del código por personas que no programan a diario.

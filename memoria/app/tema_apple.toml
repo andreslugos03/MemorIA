@@ -1,0 +1,64 @@
+# Tema de la interfaz web de MemorIA.
+#
+# Emula el lenguaje visual de los sistemas de Apple (macOS e iOS) con colores
+# del sistema, tipografía San Francisco cuando el equipo la tiene y modo claro
+# u oscuro según la preferencia del sistema operativo. No incluye fuentes,
+# logotipos ni recursos propiedad de Apple. En equipos sin San Francisco la
+# interfaz usa Helvetica Neue, Segoe UI o Roboto.
+#
+#   memoria app proyecto                     (aplica este tema automáticamente)
+#   streamlit run memoria/app/app.py --theme.base memoria/app/tema_apple.toml
+
+[theme]
+font = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+headingFont = "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+codeFont = "'SF Mono', ui-monospace, Menlo, Monaco, Consolas, monospace"
+baseFontSize = 15
+headingFontSizes = ["2.125rem", "1.375rem", "1.0625rem", "0.9375rem"]
+headingFontWeights = [700, 650, 600, 600]
+baseRadius = "0.625rem"
+buttonRadius = "full"
+showSidebarBorder = true
+chartCategoricalColors = ["#007AFF", "#34C759", "#FF9500", "#AF52DE", "#FF3B30", "#5AC8FA", "#FFCC00", "#5856D6"]
+
+[theme.light]
+primaryColor = "#007AFF"
+backgroundColor = "#F5F5F7"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1D1D1F"
+borderColor = "#D2D2D7"
+linkColor = "#0066CC"
+redColor = "#FF3B30"
+orangeColor = "#FF9500"
+yellowColor = "#FFCC00"
+greenColor = "#34C759"
+blueColor = "#007AFF"
+violetColor = "#AF52DE"
+grayColor = "#8E8E93"
+dataframeHeaderBackgroundColor = "#F5F5F7"
+
+[theme.light.sidebar]
+backgroundColor = "#E8E8ED"
+secondaryBackgroundColor = "#FFFFFF"
+borderColor = "#D2D2D7"
+
+[theme.dark]
+primaryColor = "#0A84FF"
+backgroundColor = "#161617"
+secondaryBackgroundColor = "#2C2C2E"
+textColor = "#F5F5F7"
+borderColor = "#3A3A3C"
+linkColor = "#2997FF"
+redColor = "#FF453A"
+orangeColor = "#FF9F0A"
+yellowColor = "#FFD60A"
+greenColor = "#30D158"
+blueColor = "#0A84FF"
+violetColor = "#BF5AF2"
+grayColor = "#98989D"
+dataframeHeaderBackgroundColor = "#1C1C1E"
+
+[theme.dark.sidebar]
+backgroundColor = "#1F1F21"
+secondaryBackgroundColor = "#2C2C2E"
+borderColor = "#38383A"

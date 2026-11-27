@@ -10,5 +10,5 @@ El paquete reúne dos instrumentos del proyecto doctoral MemorIA
   léxico regional atribuido, abstención declarada y correcciones comunitarias.
 """
 
-__version__ = "0.4.0"
+__version__ = "0.5.0"
 VERSION_PROTOCOLO = "1.0"

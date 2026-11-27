@@ -190,7 +190,10 @@ def cmd_app(a):
     env = {**os.environ}
     if a.proyecto:
         env["MEMORIA_PROYECTO"] = os.path.abspath(a.proyecto)
-    sys.exit(subprocess.call([sys.executable, "-m", "streamlit", "run", app, "--server.port", str(a.puerto)], env=env))
+    tema = os.path.join(os.path.dirname(__file__), "app", "tema_apple.toml")
+    orden = [sys.executable, "-m", "streamlit", "run", app, "--server.port", str(a.puerto), "--theme.base", tema,
+             "--browser.gatherUsageStats", "false"]
+    sys.exit(subprocess.call(orden, env=env))
 
 
 def construir_parser() -> argparse.ArgumentParser:
