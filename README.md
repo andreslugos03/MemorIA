@@ -20,7 +20,7 @@ Partimos de una pregunta. Cada vez más personas leen el pasado a través de cha
 
 ## Instalación
 
-Requiere Python 3.10 o superior. El núcleo funciona solo con la biblioteca estándar, y la interfaz web usa Streamlit.
+El núcleo requiere Python 3.10 o superior y funciona solo con la biblioteca estándar. La interfaz web usa Streamlit y requiere Python 3.11 o superior.
 
 ```bash
 pip install "memoria-ia[app] @ git+https://github.com/andreslugos03/MemorIA"
